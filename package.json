@@ -1,0 +1,27 @@
+{
+  "name": "cpanel-manage2",
+  "description": "CPANEL MANAGE2 API client.",
+  "version": "0.0.1",
+  "author": "Pedro Pacheco <pedro.mpp@gmail.com>",
+  "maintainers": [
+    "pedrompp <pedro.mpp@gmail.com>"
+  ],
+  "contributors": [
+    "Pedro Pacheco <pedro.mpp@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ptisp/node-cpanel-manage2.git"
+  },
+  "keywords": [
+    "cpanel",
+    "hosting"
+  ],
+  "dependencies": {
+    "request": "2.21.x"
+  },
+  "main": "./cpanel",
+  "engines": {
+    "node": ">= 0.4"
+  }
+}
