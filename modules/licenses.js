@@ -182,5 +182,26 @@ Licenses.prototype.transferlicense = function (groupid, packageid, ip, callback)
   utils.modem('XMLtransferRequest.cgi', createOptions, callback);
 };
 
+/**
+ * Request a Packages IDs -
+ * This function returns the Manage2 account's packages.
+ * @param callback
+ */
+Licenses.prototype.packagesids = function (callback) {
+  var options = {
+    output: 'json',
+    groupid: groupid,
+    packageid: packageid,
+    ip: ip
+  };
+
+  var createOptions = {
+    client: this,
+    body: options
+  };
+
+  utils.modem('XMLpackageInfo.cgi', createOptions, callback);
+};
+
 
 module.exports = Licenses;
