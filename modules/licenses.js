@@ -190,9 +190,6 @@ Licenses.prototype.transferlicense = function (groupid, packageid, ip, callback)
 Licenses.prototype.packagesids = function (callback) {
   var options = {
     output: 'json',
-    groupid: groupid,
-    packageid: packageid,
-    ip: ip
   };
 
   var createOptions = {
