@@ -223,8 +223,8 @@ Licenses.prototype.expirelicense = function (licenseid, reason, callback) {
 };
 
 /**
- * Modify Licenses
- * This function expires a license.
+ * Change a License IP Address
+ * This function transfers an existing license.
  * @param oldip - string - The license's current IP address.
  * @param newip - string - The license's new IP address.
  * @param callback
