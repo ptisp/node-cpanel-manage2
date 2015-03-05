@@ -65,7 +65,6 @@ Licenses.prototype.displaygroupslicense = function (callback) {
  * This function transfers an existing license.
  * @param oldip - string - The license's current IP address.
  * @param newip - string -The license's new IP address.
- * @param packageid - string - The license's package ID. If you do not use this parameter, the function transfers all of the licenses on the current IP address.
  * @param [opts] Object
  * @param [opts.force] - boolean - Whether to force a license transfer if the transfer adds a charge to a deactivated IP address.
           1 — Force a transfer.
@@ -75,7 +74,7 @@ Licenses.prototype.displaygroupslicense = function (callback) {
           0 — Transfer the license.
  * @param callback
  */
-Licenses.prototype.changeiplicense = function (oldip, newip, packageid, opts, callback) {
+Licenses.prototype.changeiplicense = function (oldip, newip, opts, callback) {
   var options = {
     output: 'json',
     oldip: oldip,
@@ -220,28 +219,6 @@ Licenses.prototype.expirelicense = function (licenseid, reason, callback) {
   };
 
   utils.modem('XMLlicenseExpire.cgi', createOptions, callback);
-};
-
-/**
- * Change a License IP Address
- * This function transfers an existing license.
- * @param oldip - string - The license's current IP address.
- * @param newip - string - The license's new IP address.
- * @param callback
- */
-Licenses.prototype.modifylicense = function (oldip, newip, callback) {
-  var options = {
-    output: 'json',
-    oldip : oldip,
-    newip: newip
-  };
-
-  var createOptions = {
-    client: this,
-    body: options
-  };
-
-  utils.modem('XMLtransfer.cgi', createOptions, callback);
 };
 
 
