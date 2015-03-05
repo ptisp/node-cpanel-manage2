@@ -219,7 +219,29 @@ Licenses.prototype.expirelicense = function (licenseid, reason, callback) {
     body: options
   };
 
-  utils.modem('XMLpackageInfo.cgi', createOptions, callback);
+  utils.modem('XMLlicenseExpire.cgi', createOptions, callback);
+};
+
+/**
+ * Modify Licenses
+ * This function expires a license.
+ * @param oldip - string - The license's current IP address.
+ * @param newip - string - The license's new IP address.
+ * @param callback
+ */
+Licenses.prototype.modifylicense = function (oldip, newip, callback) {
+  var options = {
+    output: 'json',
+    oldip : oldip,
+    newip: newip
+  };
+
+  var createOptions = {
+    client: this,
+    body: options
+  };
+
+  utils.modem('XMLtransfer.cgi', createOptions, callback);
 };
 
 
