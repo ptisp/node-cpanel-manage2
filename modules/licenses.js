@@ -200,5 +200,27 @@ Licenses.prototype.packagesids = function (callback) {
   utils.modem('XMLpackageInfo.cgi', createOptions, callback);
 };
 
+/**
+ * Expire Licenses
+ * This function expires a license.
+ * @param licenseid - integer - The license ID to expire.
+ * @param reason - string - The reason for expiration.
+ * @param callback
+ */
+Licenses.prototype.expirelicense = function (licenseid, reason, callback) {
+  var options = {
+    output: 'json',
+    licenseid : licenseid,
+    reason: reason
+  };
+
+  var createOptions = {
+    client: this,
+    body: options
+  };
+
+  utils.modem('XMLpackageInfo.cgi', createOptions, callback);
+};
+
 
 module.exports = Licenses;
