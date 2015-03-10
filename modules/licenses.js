@@ -65,6 +65,7 @@ Licenses.prototype.displaygroupslicense = function (callback) {
  * This function transfers an existing license.
  * @param oldip - string - The license's current IP address.
  * @param newip - string -The license's new IP address.
+ * @param packageid - string - The license's package ID.
  * @param [opts] Object
  * @param [opts.force] - boolean - Whether to force a license transfer if the transfer adds a charge to a deactivated IP address.
           1 — Force a transfer.
@@ -74,7 +75,7 @@ Licenses.prototype.displaygroupslicense = function (callback) {
           0 — Transfer the license.
  * @param callback
  */
-Licenses.prototype.changeiplicense = function (oldip, newip, opts, callback) {
+Licenses.prototype.changeiplicense = function (oldip, newip, packageid, opts, callback) {
   var options = {
     output: 'json',
     oldip: oldip,
