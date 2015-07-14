@@ -210,7 +210,8 @@ Licenses.prototype.packagesids = function (callback) {
 Licenses.prototype.expirelicense = function (licenseid, reason, callback) {
   var options = {
     output: 'json',
-    licenseid : licenseid,
+    liscid : licenseid,
+    expcode: 'normal',
     reason: reason
   };
 
